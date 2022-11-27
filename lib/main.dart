@@ -4,7 +4,7 @@ import 'package:provider_example/providers/counter_provider.dart';
 import 'package:provider_example/screens/home_page.dart';
 
 void main() {
-  //!
+  //! important
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (_) => Counter()),
   ], child: const MyApp()));
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => HomePage(),
+        '/': (context) => const HomePage(),
       },
     );
   }

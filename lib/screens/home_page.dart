@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider_example/providers/counter_provider.dart';
 import 'package:provider/provider.dart';
+import '../widgets/counter_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -23,7 +24,7 @@ class HomePage extends StatelessWidget {
         children: [
           FloatingActionButton(
             onPressed: () {
-              context.read<Counter>().substract(); //!
+              context.read<Counter>().substract(); //! important
             },
             child: const Icon(
               Icons.remove,
@@ -32,7 +33,7 @@ class HomePage extends StatelessWidget {
           const SizedBox(width: 16.0),
           FloatingActionButton(
             onPressed: () {
-              context.read<Counter>().reset(); //!
+              context.read<Counter>().reset(); //! important
             },
             child: const Icon(
               Icons.exposure_zero,
@@ -41,7 +42,7 @@ class HomePage extends StatelessWidget {
           const SizedBox(width: 16.0),
           FloatingActionButton(
             onPressed: () {
-              context.read<Counter>().increment(); //!
+              context.read<Counter>().increment(); //! important
             },
             child: const Icon(
               Icons.add,
@@ -50,16 +51,5 @@ class HomePage extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-class CounterWidget extends StatelessWidget {
-  const CounterWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text('${context.watch<Counter>().count}');
   }
 }
